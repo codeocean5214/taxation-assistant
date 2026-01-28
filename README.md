@@ -2,7 +2,7 @@
 
 **LangChain v1.2+ | Llama 3.2 | 100% Free & Local**
 
-A production-ready RAG (Retrieval-Augmented Generation) system for corporate taxation policy Q&A, built with the latest LangChain v1.2 stack.
+A RAG (Retrieval-Augmented Generation) system for corporate taxation policy Q&A, built with the latest LangChain v1.2 stack.
 
 ## ✨ Features
 
