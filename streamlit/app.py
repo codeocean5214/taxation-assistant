@@ -22,10 +22,44 @@ from core.config import (
 
 # Page config
 st.set_page_config(
-    page_title=STREAMLIT_PAGE_TITLE,
-    page_icon=STREAMLIT_PAGE_ICON,
+    page_title="Women-Friendly Policy Assistant",
+    page_icon="🌸",
     layout="wide"
 )
+
+# Custom UI theme via CSS
+st.markdown("""
+<style>
+    .stApp {
+        background: linear-gradient(160deg, #fdf7f7 0%, #fff2f6 100%);
+        color: #3a2731;
+    }
+    .stSidebar {
+        background-color: #ffe9ed;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .stButton>button {
+        background-color: #ff88a4;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        font-weight: 700;
+    }
+    .stTextInput>div>input,
+    .stSlider>div>div>input {
+        border-radius: 10px;
+    }
+    .streamlit-expanderHeader {
+        font-weight: 700;
+    }
+    .stChatMessage {
+        border-radius: 15px;
+        background: #fff2f6 !important;
+        padding: 12px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Session state
 if "messages" not in st.session_state:
@@ -128,8 +162,13 @@ with st.sidebar:
     """)
 
 # Main interface
-st.title(f"{STREAMLIT_PAGE_ICON} Tax Policy Assistant")
-st.markdown("Ask questions about corporate taxation policies based on your documents.")
+st.markdown("""
+<div style='width:100%; background: #ffd9e3; border-radius: 25px; padding: 20px; margin-bottom: 20px;'>
+  <h1 style='color:#b6345a; text-align:center; margin-bottom: 8px;'>🌸 Women-Friendly Policy Assistant</h1>
+  <p style='text-align:center; color:#6b3f50; font-size:18px;'>Connect your policy questions to a supportive, inclusive experience with warm colors and easy reading.</p>
+</div>
+""", unsafe_allow_html=True)
+st.markdown("**How to use:** upload a document, create an index, then ask questions in the chat below.")
 
 # Chat history
 for msg in st.session_state.messages:
